@@ -1,0 +1,25 @@
+.social-menu {
+    background-image: linear-gradient(45deg, #dfd0d0, #caa1a1 50%, #f8f8f8 100%);
+    border-radius: 5px;
+    margin: 0px;
+    
+
+    ul {
+        list-style: none;
+        padding: 0px;
+        margin: 0px;
+    }
+
+    li {
+        display: inline-block;
+        padding: 5px;
+        font-size: 1.5rem;
+
+    }
+
+    i {
+        color: #690606;
+    }
+
+
+}

@@ -1,0 +1,32 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-image:linear-gradient(90deg,#9c1919  50%, #926f6f 100%);
+    padding: 20px;
+    margin: 0px;
+    .logo{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+    }
+    .menu{
+        display: flex;
+        gap: 15px;
+    }
+    h2{
+        cursor: pointer;
+        padding: 5px;
+        font-size: 1.7rem;
+        color: #e9e1e1;
+        
+        &:hover{
+            position:static;
+            background-color: #5f09098c;
+            border-radius: 5px;
+            padding: 5px;
+            color: #f3f2f2;
+        }
+    }
+}

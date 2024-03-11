@@ -1,0 +1,16 @@
+.catVideos{   
+    
+   h1{
+    display: block;
+    color: rgb(157, 155, 155);
+    font-size: 2.3rem;
+    font-weight: 400;
+   }
+
+   .videos{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 10px;
+   }
+}
