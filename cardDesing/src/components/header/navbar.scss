@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Truculenta:opsz,wght@12..72,100..900&display=swap');
+
+.navbar {
+    background-color: rgba(255, 255, 255, 0.596) !important;
+    font-size: 1.5rem;
+    font-family: "Truculenta", sans-serif;
+    position: absolute;
+
+    .navbar-brand {
+        font-size: 2rem;
+        background-color:  rgba(33, 156, 156, 0.432);
+        padding: 0 10px 0 10px;
+        box-shadow: 10px 10px 10px rgba(24, 109, 76, 0.5);
+        border-radius: 10px;
+        font-weight: 300;
+    }
+
+    .navbar-collapse {
+        a {
+          margin: 10px;
+          padding: 0px;
+
+            &:hover {
+                position: sticky;
+                transform: scale(1.2);               
+                border-bottom: 2px solid rgba(14, 185, 177, 0.5);
+                
+            }
+
+        }
+
+    }
+
+    .btn {
+        background-color: rgb(33, 156, 156);
+        border-color: rgb(216, 224, 224);
+        box-shadow: 5px 5px 10px rgba(24, 109, 76, 0.5);
+        border-radius: 10px;
+        font-weight: 200;
+
+        &:hover {
+            transform: scale(1.1);
+            transition: all 1.5s;
+            background-color: rgba(113, 232, 236, 0.5);
+            color: rgb(7, 58, 41);
+            border-color: rgb(50, 182, 160);
+            font-weight: 300;
+            -webkit-transition: all 1.5s;
+            -moz-transition: all 1.5s;
+            -ms-transition: all 1.5s;
+            -o-transition: all 1.5s;
+}
+    }
+}

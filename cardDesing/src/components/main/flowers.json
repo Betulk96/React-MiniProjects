@@ -1,0 +1,162 @@
+[
+  {
+    "id": 1,
+    "name": "Papatya",
+    "image": "https://images.pexels.com/photos/2317922/pexels-photo-2317922.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "price": 15.99,
+    "sale": false,
+    "rate": 4
+  },
+  {
+    "id": 2,
+    "name": "Gül",
+    "image": "https://images.pexels.com/photos/1927214/pexels-photo-1927214.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "price": 24.99,
+    "sale": true,
+    "rate": 5
+  },
+  {
+    "id": 3,
+    "name": "Lavanta",
+    "image": "https://images.pexels.com/photos/16574114/pexels-photo-16574114/free-photo-of-su-cicekler-mor-bardak.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "price": 19.99,
+    "sale": false,
+    "rate": 3
+  },
+  {
+    "id": 4,
+    "name": "Menekşe",
+    "image": "https://images.pexels.com/photos/112824/pexels-photo-112824.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "price": 12.99,
+    "sale": true,
+    "rate": 4
+  },
+  {
+    "id": 5,
+    "name": "Orkide",
+    "image": "https://images.pexels.com/photos/1906446/pexels-photo-1906446.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "price": 29.99,
+    "sale": false,
+    "rate": 5
+  },
+  {
+    "id": 6,
+    "name": "Papatya",
+    "image": "https://images.pexels.com/photos/16087892/pexels-photo-16087892/free-photo-of-cicekler-renkli-rengarenk-bitkiler.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "price": 18.99,
+    "sale": true,
+    "rate": 4
+  },
+  {
+    "id": 7,
+    "name": "Karanfil",
+    "image": "https://images.pexels.com/photos/16645055/pexels-photo-16645055/free-photo-of-doga-yay-bahar-ari.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "price": 14.99,
+    "sale": false,
+    "rate": 3
+  },
+  {
+    "id": 8,
+    "name": "Süsen",
+    "image": "https://images.pexels.com/photos/931147/pexels-photo-931147.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "price": 21.99,
+    "sale": true,
+    "rate": 4
+  },
+  {
+    "id": 9,
+    "name": "Zambak",
+    "image": "https://images.pexels.com/photos/2115971/pexels-photo-2115971.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "price": 26.99,
+    "sale": false,
+    "rate": 5
+  },
+  {
+    "id": 10,
+    "name": "Gardenya",
+    "image": "https://images.pexels.com/photos/1058771/pexels-photo-1058771.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "price": 32.99,
+    "sale": true,
+    "rate": 4
+  },
+  {
+    "id": 11,
+    "name": "Papatya",
+    "image": "https://images.pexels.com/photos/74512/pexels-photo-74512.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "price": 15.99,
+    "sale": false,
+    "rate": 4
+  },
+  {
+    "id": 12,
+    "name": "Gül",
+    "image": "https://images.pexels.com/photos/2300713/pexels-photo-2300713.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "price": 24.99,
+    "sale": true,
+    "rate": 5
+  },
+  {
+    "id": 13,
+    "name": "Lavanta",
+    "image": "https://images.pexels.com/photos/12652584/pexels-photo-12652584.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "price": 19.99,
+    "sale": false,
+    "rate": 4
+  },
+  {
+    "id": 14,
+    "name": "Menekşe",
+    "image": "https://images.pexels.com/photos/4207492/pexels-photo-4207492.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "price": 12.99,
+    "sale": true,
+    "rate": 2
+  },
+  {
+    "id": 15,
+    "name": "Orkide",
+    "image": "https://images.pexels.com/photos/6207449/pexels-photo-6207449.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "price": 29.99,
+    "sale": false,
+    "rate": 5
+  },
+  {
+    "id": 16,
+    "name": "Papatya",
+    "image": "https://images.pexels.com/photos/4022207/pexels-photo-4022207.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "price": 18.99,
+    "sale": true,
+    "rate": 4
+  },
+  {
+    "id": 17,
+    "name": "Karanfil",
+    "image": "https://images.pexels.com/photos/136255/pexels-photo-136255.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "price": 14.99,
+    "sale": false,
+    "rate": 3
+  },
+  {
+    "id": 18,
+    "name": "Süsen",
+    "image": "https://images.pexels.com/photos/2424378/pexels-photo-2424378.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "price": 21.99,
+    "sale": true,
+    "rate": 4
+  },
+  {
+    "id": 19,
+    "name": "Zambak",
+    "image": "https://images.pexels.com/photos/7815234/pexels-photo-7815234.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "price": 26.99,
+    "sale": false,
+    "rate": 5
+  },
+  {
+    "id": 20,
+    "name": "Gardenya",
+    "image": "https://images.pexels.com/photos/17479365/pexels-photo-17479365/free-photo-of-doga-tac-yapraklar-fabrika-beyaz.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "price": 32.99,
+    "sale": true,
+    "rate": 5
+  }
+]

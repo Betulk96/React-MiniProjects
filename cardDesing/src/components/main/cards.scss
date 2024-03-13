@@ -1,0 +1,44 @@
+.card-body {
+    img {
+        width: 100%;
+        height: 350px;
+        object-fit: cover;
+        object-position: 10 0;
+        border-radius: 10px;
+
+    }
+
+    .box {
+        width: 75%;
+        background-color: rgb(33, 156, 156);
+        border-color: rgb(216, 224, 224);
+        box-shadow: 5px 5px 10px rgba(24, 109, 76, 0.5);
+        border-radius: 10px;
+        font-weight: 200;
+
+        &:hover {
+            transform: scale(1.1);
+            transition: all 1.2s;
+            background-color: rgba(105, 189, 155, 0.5);
+            color: rgb(7, 58, 41);
+            border-color: rgb(11, 48, 48);
+            -webkit-transition: all 1.2s;
+            -moz-transition: all 1.2s;
+            -ms-transition: all 1.2s;
+            -o-transition: all 1.2s;
+}
+
+        &:active {
+            transform: scale(0.9);
+            background-color: rgb(193, 207, 207) !important;
+            border-color: rgb(14, 68, 68) !important;
+            color:rgba(24, 109, 76, 0.5)!important; ;
+        }
+
+    }
+
+    strong {
+        font-weight: 200;
+        text-decoration: line-through;
+    }
+}
