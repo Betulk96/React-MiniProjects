@@ -1,13 +1,16 @@
 import { useState } from 'react'
 import './App.scss'
+import { Col, Container, Row } from 'react-bootstrap'
+
+import TodoManager from './todoApp/todoManager'
+
 
 function App() {
-  const [count, setCount] = useState(0)
+  
 
   return (
     <>
-      <p>Hello</p>
-      
+      <TodoManager  />
     </>
   )
 }

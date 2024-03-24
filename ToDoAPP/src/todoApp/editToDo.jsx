@@ -1,19 +1,20 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react';
+import { Form, Button, Card, Alert, Col, Row, Spinner, CardBody } from 'react-bootstrap';
+import { getToDo, updateToDo } from '../todoApp/api';
+import * as Yup from 'yup';
 import { useFormik } from "formik";
-import { Alert, Button, Card, CardBody, Col, Form, Row, Spinner } from "react-bootstrap";
-import * as Yup from "yup";
-import { createToDo } from "../todoApp/api";
 
-const NoteForm = ({ setOp, setRefreshList }) => {
+const EditToDo = ({ currentNoteId, setOp, setRefreshList }) => {
   const [error, setError] = useState(null);
+
   const initialValues = {
-    title: "",
-    description: "",
-    startDateTime: "",
-    endDateTime: "",
-    image: "",
-    withWho: "",
-    place: "",
+    title: undefined,
+    description: undefined,
+    startDateTime: undefined,
+    endDateTime: undefined,
+    image: undefined,
+    withWho: undefined,
+    place: undefined,
   };
   const validationSchema = Yup.object({
     title: Yup.string().max(50, "Max 50 chars").required("Required"),
@@ -25,33 +26,42 @@ const NoteForm = ({ setOp, setRefreshList }) => {
       .required("Required")
       .min(Yup.ref('startDateTime'), "End date must be after start date"),
 
-    //ref ile sDT a referans verdik
-  });
 
+  });
   const onSubmit = async (values) => {
     try {
-      await createToDo(values);
+      await updateToDo(currentNoteId, values);
       setOp(null);
-      formik.resetForm();
       setRefreshList(true);
-      
     } catch (err) {
       setError(err.message);
     }
   };
-
   const formik = useFormik({
     initialValues,
     validationSchema,
     onSubmit,
   });
-  const handleCancel = () => {
-    const confirmCancel = window.confirm("Are you sure you want to cancel? Your changes will be lost.");
-    if (confirmCancel) {
-      formik.resetForm(); // Formu sıfırla
-      setOp(null); // Operasyonu sıfırla
-    }
-  };
+
+
+
+  useEffect(() => {
+
+    const loadToDo = async () => {
+      try {
+        const response = await getToDo(currentNoteId);
+        console.log(response);
+        formik.setValues(response);//formik alanındaki değerleri response'den alır
+      } catch (error) {
+        console.error('Error fetching task:', error);
+      }
+    };
+
+    loadToDo(); // fetchToDo fonksiyonunu çağır
+  }, [currentNoteId]);
+
+
+
 
   return (
     <Card className="mb-4">
@@ -59,7 +69,7 @@ const NoteForm = ({ setOp, setRefreshList }) => {
         {/* eğer hata varsa messaje geicek */}
         {error ? <Alert className="mb-4">{error.message}</Alert> : null}
         <Form noValidate onSubmit={formik.handleSubmit}>
-          <Row>
+          <Row >
 
             <Col md={12}>
               <Form.Group className="mb-3">
@@ -158,7 +168,7 @@ const NoteForm = ({ setOp, setRefreshList }) => {
           </Row>
 
           <div className="d-flex justify-content-between ">
-          <Button variant="secondary" onClick={handleCancel}>
+            <Button variant="secondary" onClick={() => setOp(null)}>
               Cancel
             </Button>
 
@@ -172,7 +182,7 @@ const NoteForm = ({ setOp, setRefreshList }) => {
               {formik.isSubmitting ? (
                 <Spinner size="sm" />
               ) : (
-                "Create"
+                "Update"
               )}
             </Button>
           </div>
@@ -183,4 +193,4 @@ const NoteForm = ({ setOp, setRefreshList }) => {
   )
 }
 
-export default NoteForm;
+export default EditToDo;
