@@ -3,6 +3,7 @@ import { getToDo } from './api';
 import { Alert, Col, Spinner, Row } from 'react-bootstrap';
 import Note from './Note';
 
+
 const NoteList = (props) => {
   const { refreshList, setOp, setCurrentNoteId, setRefreshList } = props;
   const [notes, setNotes] = useState([]);
@@ -13,7 +14,15 @@ const NoteList = (props) => {
     (async () => {
       try {
         const data = await getToDo();
-        setNotes(data.reverse());
+        // startDateTime alanına göre tarihe göre sırala, başlangıç tarihi boş olanlar önce, ardından en güncel olanlar
+        const sortedData = data.sort((a, b) => {
+          // Condition false olanları en üste getir
+          if (!a.condition && b.condition) return -1;
+          if (a.condition && !b.condition) return 1;
+          // Her ikisinin de condition durumu aynıysa en güncel olanı en üste getir
+          return new Date(b.startDateTime) - new Date(a.startDateTime);
+        });
+        setNotes(sortedData);
       } catch (err) {
         setError(err.message);
       } finally {
@@ -33,7 +42,7 @@ const NoteList = (props) => {
   ) : null;
 
 
-  const noteList = (<Row xs={1} md={2} lg={3} xl={4} className="g-4">
+  const noteList = (<Row xs={1} md={2} lg={3} xl={3} className="g-4">
     {notes.length <= 0 ? (
       <Alert variant="warning">No product found</Alert>
     ) : null}

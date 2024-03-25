@@ -4,6 +4,8 @@ import { deleteToDo, updateToDo } from '../todoApp/api';
 import moment from 'moment';
 import { TfiPencil, TfiTrash, TfiCheck, TfiClose } from "react-icons/tfi";
 
+import "../scss/card.scss";
+
 
 const Note = (props) => {
   const [deleting, setDeleting] = useState(false);
@@ -16,8 +18,8 @@ const Note = (props) => {
     setConditions(condition);
   }, [condition]);
 
-  const formattedStartDateTime = moment(startDateTime).format('ddd hA');
-  const formattedEndDateTime = moment(endDateTime).format('ddd hA');
+  const formattedStartDateTime = moment(startDateTime).format('DD ddd hA');
+  const formattedEndDateTime = moment(endDateTime).format('DD ddd hA');
 
   const handleEdit = () => {
     console.log({
@@ -61,8 +63,14 @@ const Note = (props) => {
     }
   };
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth" // Animasyonlu kaydırma için
+    });
+  };
   return (
-    <Card className="text-center">
+    <Card className="cardBody text-center">
       <Card.Header className="justify-content-end">
         <div>{title} </div>
         <div>{formattedStartDateTime} - {formattedEndDateTime}</div>
@@ -103,7 +111,10 @@ const Note = (props) => {
           variant="warning"
           size="lg"
           className="mt-3 ms-3"
-          onClick={handleEdit}
+          onClick={() => {
+            handleEdit();
+            scrollToTop();
+          }}
           disabled={deleting}
         >
           <TfiPencil />

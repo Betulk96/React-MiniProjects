@@ -10,36 +10,40 @@ const TodoManager = () => {
     const [currentNoteId, setCurrentNoteId] = useState(null);
 
     return (
-        <Container>
-            <Row className="mt-4">
-                <Col md={4} lg={3}>
+        <Container className='m-0 p-0  ' >
+        <Row className="mt-4 m-0 ">
+            <Col md={4} lg={3}>
                     
+                {/* Koşullu render kullanarak NoteForm'u gizleme */}
+                {op !== "edit" && (
                     <NoteForm
                         setOp={setOp}
                         setRefreshList={setRefreshList}
-                        
                     />
-                </Col>
+                )}
 
-                <Col>
-                    {op === "edit" ? (
-                        <EditToDo
-                            currentNoteId={currentNoteId}
-                            setOp={setOp}
-                            setRefreshList={setRefreshList}
-                            setCurrentNoteId={setCurrentNoteId}
-                        />
-                    ) : null}
-
-                    <NoteList
-                        refreshList={refreshList}
+                {/* Eğer op "edit" ise EditToDo bileşenini render et */}
+                {op === "edit" && (
+                    <EditToDo
+                        currentNoteId={currentNoteId}
                         setOp={setOp}
-                        setCurrentNoteId={setCurrentNoteId} 
                         setRefreshList={setRefreshList}
+                        setCurrentNoteId={setCurrentNoteId}
                     />
-                </Col>
-            </Row>
-        </Container>
+                )}
+
+            </Col>
+
+            <Col>
+                <NoteList
+                    refreshList={refreshList}
+                    setOp={setOp}
+                    setCurrentNoteId={setCurrentNoteId}
+                    setRefreshList={setRefreshList}
+                />
+            </Col>
+        </Row>
+    </Container>
     );
 }
 

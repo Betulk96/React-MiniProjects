@@ -34,7 +34,7 @@ const NoteForm = ({ setOp, setRefreshList }) => {
       setOp(null);
       formik.resetForm();
       setRefreshList(true);
-      
+
     } catch (err) {
       setError(err.message);
     }
@@ -54,12 +54,15 @@ const NoteForm = ({ setOp, setRefreshList }) => {
   };
 
   return (
+
     <Card className="mb-4">
       <CardBody>
         {/* eğer hata varsa messaje geicek */}
         {error ? <Alert className="mb-4">{error.message}</Alert> : null}
         <Form noValidate onSubmit={formik.handleSubmit}>
+
           <Row>
+            <h1>ToDo App</h1>
 
             <Col md={12}>
               <Form.Group className="mb-3">
@@ -87,7 +90,7 @@ const NoteForm = ({ setOp, setRefreshList }) => {
                 </Form.Control.Feedback>
               </Form.Group>
             </Col>
-            <Col md={6}>
+            <Col md={12}>
               <Form.Group className="mb-3">
                 <Form.Label>Start Date Time</Form.Label>
                 <Form.Control
@@ -100,7 +103,7 @@ const NoteForm = ({ setOp, setRefreshList }) => {
                 </Form.Control.Feedback>
               </Form.Group>
             </Col>
-            <Col md={6}>
+            <Col md={12}>
               <Form.Group className="mb-3">
                 <Form.Label>End Date Time</Form.Label>
                 <Form.Control
@@ -110,19 +113,6 @@ const NoteForm = ({ setOp, setRefreshList }) => {
                 />
                 <Form.Control.Feedback type="invalid">
                   {formik.errors.endDateTime}
-                </Form.Control.Feedback>
-              </Form.Group>
-            </Col>
-            <Col md={12}>
-              <Form.Group className="mb-3">
-                <Form.Label>Image</Form.Label>
-                <Form.Control
-                  type="file"
-                  {...formik.getFieldProps("image")}
-                  isInvalid={formik.touched.image && formik.errors.image}
-                />
-                <Form.Control.Feedback type="invalid">
-                  {formik.errors.image}
                 </Form.Control.Feedback>
               </Form.Group>
             </Col>
@@ -151,6 +141,18 @@ const NoteForm = ({ setOp, setRefreshList }) => {
                   {formik.errors.place}
                 </Form.Control.Feedback>
               </Form.Group>
+            </Col><Col md={12}>
+              <Form.Group className="mb-3">
+                <Form.Label>Image</Form.Label>
+                <Form.Control
+                  type="file"
+                  {...formik.getFieldProps("image")}
+                  isInvalid={formik.touched.image && formik.errors.image}
+                />
+                <Form.Control.Feedback type="invalid">
+                  {formik.errors.image}
+                </Form.Control.Feedback>
+              </Form.Group>
             </Col>
 
 
@@ -158,7 +160,7 @@ const NoteForm = ({ setOp, setRefreshList }) => {
           </Row>
 
           <div className="d-flex justify-content-between ">
-          <Button variant="secondary" onClick={handleCancel}>
+            <Button variant="secondary" onClick={handleCancel}>
               Cancel
             </Button>
 
