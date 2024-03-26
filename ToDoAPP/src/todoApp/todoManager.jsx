@@ -14,7 +14,7 @@ const TodoManager = () => {
 
     return (
 
-        <Row className="m-4   ">
+        <Row className="m-4 ">
             <Col className="forms" md={4} lg={3} >
 
                 {/* Koşullu render kullanarak NoteForm'u gizleme */}

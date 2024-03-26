@@ -31,7 +31,7 @@ $color7: #af7c30;
     .form-label {
         color: $color1 !important;
         font-size: large;
-        margin-top: 10px !important;
+        margin-top: 5px !important;
     }
 
     .btnCancel {
@@ -54,7 +54,7 @@ $color7: #af7c30;
 
     .btnSubmit {
         background-color: $color2 !important;
-        color: white !important;
+        color: $color5 !important;
         border-color: $color4 !important;
 
         &:hover{

@@ -1,8 +1,18 @@
 
 
+$color1: #FFF455;
+$color2: #FFC700;
+$color3: #3ea37b;
+$color4: #007f7283;
+$color5: #114232;
+$color6: #dad9a3;
+$color7: #af7c30;
+
+
 body {
+    background-image: linear-gradient(to left, $color4, $color6 );
     
-     background-image: url("https://images.pexels.com/photos/2130475/pexels-photo-2130475.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"); 
+    /*  background-image: url("https://images.pexels.com/photos/2130475/pexels-photo-2130475.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");  */
     background-size: cover;
     background-attachment: fixed;
     background-repeat: no-repeat;

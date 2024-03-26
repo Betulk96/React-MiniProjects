@@ -15,6 +15,7 @@ const NoteForm = ({ setOp, setRefreshList }) => {
     image: "",
     withWho: "",
     place: "",
+    condition: false,
   };
   const validationSchema = Yup.object({
     title: Yup.string().max(50, "Max 50 chars").required("Required"),

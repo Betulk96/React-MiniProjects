@@ -3,6 +3,7 @@ import { Form, Button, Card, Alert, Col, Row, Spinner, CardBody } from 'react-bo
 import { getToDoById, updateToDo } from '../todoApp/api';
 import * as Yup from 'yup';
 import { useFormik } from "formik";
+import "../scss/form.scss";
 
 const EditToDo = ({ currentNoteId, setOp, setRefreshList }) => {
   const [error, setError] = useState(null);
@@ -64,12 +65,12 @@ const EditToDo = ({ currentNoteId, setOp, setRefreshList }) => {
 
   
   return (
-    <Card className="mb-4">
+    <Card className="formCard mb-4">
       <CardBody>
         {error ? <Alert className="mb-4">{error.message}</Alert> : null}
         <Form noValidate onSubmit={formik.handleSubmit}>
           <Row>
-          <h1>ToDo App</h1>
+          <h1>Update</h1>
             <Col md={12}>
               <Form.Group className="mb-3">
                 <Form.Label>Title</Form.Label>
@@ -165,10 +166,11 @@ const EditToDo = ({ currentNoteId, setOp, setRefreshList }) => {
           </Row>
 
           <div className="d-flex justify-content-between">
-            <Button variant="secondary" onClick={() => setOp(null)}>
+            <Button className='btnCancel' onClick={() => setOp(null)}>
               Cancel
             </Button>
             <Button
+              className='btnSubmit'
               type="submit"
               disabled={formik.isSubmitting || !(formik.dirty && formik.isValid)}
             >
