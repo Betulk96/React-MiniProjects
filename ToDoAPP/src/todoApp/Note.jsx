@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Button, Card, Form, ListGroup, Spinner } from 'react-bootstrap';
+import { Button, Card, Col, Form, ListGroup, Row, Spinner } from 'react-bootstrap';
 import { deleteToDo, updateToDo } from '../todoApp/api';
 import moment from 'moment';
 import { TfiPencil, TfiTrash, TfiCheck, TfiClose } from "react-icons/tfi";
@@ -18,8 +18,8 @@ const Note = (props) => {
     setConditions(condition);
   }, [condition]);
 
-  const formattedStartDateTime = moment(startDateTime).format('DD ddd hA');
-  const formattedEndDateTime = moment(endDateTime).format('DD ddd hA');
+  const formattedStartDateTime = moment(startDateTime).format('MMM DD : hA');
+  const formattedEndDateTime = moment(endDateTime).format('MMM DD : hA');
 
   const handleEdit = () => {
     console.log({
@@ -31,7 +31,7 @@ const Note = (props) => {
       image,
       withWho,
       place,
-     
+
     });
     setCurrentNoteId(id);
     setOp("edit");
@@ -70,59 +70,69 @@ const Note = (props) => {
     });
   };
   return (
-    <Card className="cardBody text-center">
-      <Card.Header className="justify-content-end">
-        <div>{title} </div>
-        <div>{formattedStartDateTime} - {formattedEndDateTime}</div>
+    <Card className=" text-center">
+      <Card.Header >
+        <h5 style={{ textTransform: 'uppercase' }}>{title}</h5>
+        <small>{formattedStartDateTime} / {formattedEndDateTime}</small>
       </Card.Header>
       <Card.Body>
-        <Card.Text>{description}</Card.Text>
-        <Card.Img variant="top" src={image} />
-        <ListGroup className="list-group-flush">
-          <ListGroup.Item>With: {withWho}</ListGroup.Item>
-          <ListGroup.Item>Place: {place}</ListGroup.Item>
-        </ListGroup>
+        <Row>
+          <Col md={3}>
+            <Card.Img variant="top" src={image} />
+          </Col>
+          <Col className="text-start align-self-end" md={9}>
+            <Card.Text className="ps-2 fs-5 ">{description}</Card.Text>
+            <nav className="ps-2 fw-light  ">
+              <div>With: {withWho}</div>
+              <div>Place: {place}</div>
+            </nav>
+
+          </Col>
+        </Row>
+
+
+
       </Card.Body>
       <Card.Footer className="deleteEditBtn">
         <Form>
           <Form.Check
+
             type="switch"
             id="custom-switch"
-            label="Condition"
             checked={conditions}
             onChange={handleConditionChange}
           />
         </Form>
+        <div>
+          <Button
+            size="lg"
+            className="btnTrash me-2"
+            onClick={handleDelete}
+            disabled={deleting}
+          >
+            {deleting ? (
+              <Spinner variant="info" size="sm" />
+            ) : (
+              <TfiTrash />
+            )}
+          </Button>
+          <Button
+            size="lg"
+            className="btnPencil "
+            onClick={() => {
+              handleEdit();
+              scrollToTop();
+            }}
+            disabled={deleting}
+          >
+            <TfiPencil />
+          </Button>
+        </div>
 
-        <Button
-          variant="danger"
-          size="lg"
-          className="mt-3 ms-3"
-          onClick={handleDelete}
-          disabled={deleting}
-        >
-          {deleting ? (
-            <Spinner variant="info" size="sm" />
-          ) : (
-            <TfiTrash />
-          )}
-        </Button>
-        <Button
-          variant="warning"
-          size="lg"
-          className="mt-3 ms-3"
-          onClick={() => {
-            handleEdit();
-            scrollToTop();
-          }}
-          disabled={deleting}
-        >
-          <TfiPencil />
-        </Button>
       </Card.Footer>
     </Card>
   )
-  
+
 }
 
 export default Note;

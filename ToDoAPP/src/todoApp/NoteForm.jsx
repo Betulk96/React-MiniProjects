@@ -3,6 +3,7 @@ import { useFormik } from "formik";
 import { Alert, Button, Card, CardBody, Col, Form, Row, Spinner } from "react-bootstrap";
 import * as Yup from "yup";
 import { createToDo } from "../todoApp/api";
+import "../scss/form.scss";
 
 const NoteForm = ({ setOp, setRefreshList }) => {
   const [error, setError] = useState(null);
@@ -52,10 +53,17 @@ const NoteForm = ({ setOp, setRefreshList }) => {
       setOp(null); // Operasyonu sıfırla
     }
   };
-
+  const convertFileToBase64 = (file) => {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = () => resolve(reader.result);
+      reader.onerror = (error) => reject(error);
+    });
+  };
   return (
 
-    <Card className="mb-4">
+    <Card className="formCard mb-4">
       <CardBody>
         {/* eğer hata varsa messaje geicek */}
         {error ? <Alert className="mb-4">{error.message}</Alert> : null}
@@ -94,6 +102,7 @@ const NoteForm = ({ setOp, setRefreshList }) => {
               <Form.Group className="mb-3">
                 <Form.Label>Start Date Time</Form.Label>
                 <Form.Control
+                  className="starTime"
                   type="datetime-local"
                   {...formik.getFieldProps("startDateTime")}
                   isInvalid={formik.touched.startDateTime && formik.errors.startDateTime}
@@ -107,6 +116,7 @@ const NoteForm = ({ setOp, setRefreshList }) => {
               <Form.Group className="mb-3">
                 <Form.Label>End Date Time</Form.Label>
                 <Form.Control
+                  className="endTime"
                   type="datetime-local"
                   {...formik.getFieldProps("endDateTime")}
                   isInvalid={formik.touched.endDateTime && formik.errors.endDateTime}
@@ -159,12 +169,13 @@ const NoteForm = ({ setOp, setRefreshList }) => {
 
           </Row>
 
-          <div className="d-flex justify-content-between ">
-            <Button variant="secondary" onClick={handleCancel}>
+          <div className=" d-flex justify-content-between ">
+            <Button className='btnCancel' onClick={handleCancel}>
               Cancel
             </Button>
 
             <Button
+              className='btnSubmit'
               type="submit"
               disabled={
                 formik.isSubmitting ||

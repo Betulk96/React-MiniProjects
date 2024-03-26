@@ -1,0 +1,41 @@
+$color1: #FFF455;
+$color2: #FFC700;
+$color3: #3ea37b;
+$color4: #007F73;
+$color5: #114232;
+$color6: #F7F6BB;
+$color7: #af6d30;
+
+@media (min-width: 768px) {
+
+    ::-webkit-scrollbar {
+        width: 15px;
+        /* Kaydırma çubuğu genişliği */
+
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: $color2;
+        /* Kaydırma çubuğu rengi */
+        border-radius: 6px;
+        /* Kenar yarıçapı */
+    }
+
+    ::-webkit-scrollbar-track {
+        background-color: $color4;
+        /* Kaydırma çubuğu arka plan rengi */
+    }
+
+    .row .forms {
+        position: sticky;
+        top: 25px;
+        /* Sabit sütunun üst kısmına sabitlemek için */
+        height: calc(100% - 25px);
+        /* Uygulamaya göre ayarlayın, bu sadece bir örnektir */
+        /* Diğer stillendirme özellikleri */
+        /* Örneğin, arka plan rengi */
+
+        /* İçerikle dolu olduğunda scroll bar göstermek için */
+        overflow-y: auto;
+    }
+}

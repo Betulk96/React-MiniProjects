@@ -3,17 +3,20 @@ import NoteForm from './NoteForm';
 import EditToDo from './editToDo';
 import { Container, Row, Col } from "react-bootstrap";
 import NoteList from './NoteList';
+import "../scss/todoManager.scss"
+
 
 const TodoManager = () => {
     const [op, setOp] = useState(null);
     const [refreshList, setRefreshList] = useState(0);
     const [currentNoteId, setCurrentNoteId] = useState(null);
+    
 
     return (
-        <Container className='m-0 p-0  ' >
-        <Row className="mt-4 m-0 ">
-            <Col md={4} lg={3}>
-                    
+
+        <Row className="m-4   ">
+            <Col className="forms" md={4} lg={3} >
+
                 {/* Koşullu render kullanarak NoteForm'u gizleme */}
                 {op !== "edit" && (
                     <NoteForm
@@ -43,7 +46,7 @@ const TodoManager = () => {
                 />
             </Col>
         </Row>
-    </Container>
+
     );
 }
 

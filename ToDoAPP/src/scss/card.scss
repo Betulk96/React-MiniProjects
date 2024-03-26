@@ -1,14 +1,46 @@
-.cardBody{
-    
-    width: 450px!important;
-    height: 100%!important;
+$color1: #FFF455;
+$color2: #FFC700;
+$color3: #3ea37b;
+$color4: #007F73;
+$color5: #114232;
+$color6: #F7F6BB;
+$color7: #b97a1a;
 
+
+.card-header {
+    background-color: #FFC700 !important;
+}
+
+.card-body {
+
+    margin: 5px!important;
+    padding: 5px!important;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+    
+    
     img {
         width: 100%;
         height: 100%;
         object-fit: cover;
         object-position: 10 0;
         border-radius: 10px;
+
+        &:hover {
+            transform: scale(2);
+            transition: all 1.2s;
+            position:static;
+            -webkit-transition: all 1.2s;
+            -moz-transition: all 1.2s;
+            -ms-transition: all 1.2s;
+            -o-transition: all 1.2s;
+            -webkit-transform: scale(2);
+            -moz-transform: scale(2);
+            -ms-transform: scale(2);
+            -o-transform: scale(2);
+}
 
     }
 
@@ -30,13 +62,14 @@
             -moz-transition: all 1.2s;
             -ms-transition: all 1.2s;
             -o-transition: all 1.2s;
-}
+        }
 
         &:active {
             transform: scale(0.9);
             background-color: rgb(193, 207, 207) !important;
             border-color: rgb(14, 68, 68) !important;
-            color:rgba(24, 109, 76, 0.5)!important; ;
+            color: rgba(24, 109, 76, 0.5) !important;
+            ;
         }
 
     }
@@ -44,5 +77,90 @@
     strong {
         font-weight: 200;
         text-decoration: line-through;
+    }
+}
+
+.card-footer {
+    margin: 0px!important;
+    padding: 5px!important;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: $color3 !important;
+    font-size: x-large;
+
+
+    .form-check-input {
+        margin-top: 10px !important;
+        background-color: $color6 !important;
+        color: $color1 !important;
+        border-color: $color4 !important;
+
+        &:checked {
+            background-color: $color5 !important;
+            color: $color1 !important;
+            border-color: $color4 !important;
+        }
+
+        &:hover {
+            background-color: $color2 !important;
+            color: $color1 !important;
+            border-color: $color4 !important;
+            transform: scale(1.1);
+            transition: all 1.9s;
+            -webkit-transform: scale(1.2);
+            -moz-transform: scale(1.2);
+            -ms-transform: scale(1.2);
+            -o-transform: scale(1.2);
+            -webkit-transition: all 1.9s;
+            -moz-transition: all 1.9s;
+            -ms-transition: all 1.9s;
+            -o-transition: all 1.9s;
+        }
+    }
+
+    .btnPencil {
+        background-color: $color1 !important;
+        color: $color5 !important;
+        border-color: $color4 !important;
+
+        &:hover {
+            background-color: $color4 !important;
+            color: $color1 !important;
+            border-color: $color7 !important;
+
+            transform: scale(1.1);
+            transition: all 1.9s;
+            -webkit-transform: scale(1.2);
+            -moz-transform: scale(1.2);
+            -ms-transform: scale(1.2);
+            -o-transform: scale(1.2);
+            -webkit-transition: all 1.9s;
+            -moz-transition: all 1.9s;
+            -ms-transition: all 1.9s;
+            -o-transition: all 1.9s;
+        }
+    }
+
+    .btnTrash {
+        background-color: $color7 !important;
+        color: $color5 !important;
+        border-color: $color4 !important;
+
+        &:hover {
+            background-color: $color5 !important;
+            color: $color1 !important;
+            border-color: $color4 !important;
+            transform: scale(1.1);
+            transition: all 1.9s;
+            -webkit-transform: scale(1.2);
+            -moz-transform: scale(1.2);
+            -ms-transform: scale(1.2);
+            -o-transform: scale(1.2);
+            -webkit-transition: all 1.9s;
+            -moz-transition: all 1.9s;
+            -ms-transition: all 1.9s;
+            -o-transition: all 1.9s;
+        }
     }
 }

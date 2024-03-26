@@ -1,0 +1,75 @@
+$color1: #FFF455;
+$color2: #FFC700;
+$color3: #3ea37b;
+$color4: #007F73;
+$color5: #114232;
+$color6: #F7F6BB;
+$color7: #af7c30;
+
+.formCard {
+
+    background-image: linear-gradient(to left, $color3, $color4 );
+    color: $color2 !important;
+
+    h1 {
+        border-bottom: #ffc80079 2px solid;
+        padding: 10px;
+    }
+
+    .form-control {
+
+        color: $color3 !important;
+        border-color: $color7 !important;
+
+        &:focus {
+            color: $color5 !important;
+
+            border-color: $color6 !important;
+        }
+    }
+
+    .form-label {
+        color: $color1 !important;
+        font-size: large;
+        margin-top: 10px !important;
+    }
+
+    .btnCancel {
+        background-color: $color7 !important;
+        color: $color6 !important;
+        border-color: $color4 !important;
+        &:hover{
+            transform: scale(1.1);
+            transition: all 0.7s;
+            -webkit-transform: scale();
+            -moz-transform: scale();
+            -ms-transform: scale();
+            -o-transform: scale();
+            -webkit-transition: all 0.7s;
+            -moz-transition: all 0.7s;
+            -ms-transition: all 0.7s;
+            -o-transition: all 0.7s;
+}
+    }
+
+    .btnSubmit {
+        background-color: $color2 !important;
+        color: white !important;
+        border-color: $color4 !important;
+
+        &:hover{
+            transform: scale(1.1);
+            transition: all 0.7s;
+            -webkit-transform: scale();
+            -moz-transform: scale();
+            -ms-transform: scale();
+            -o-transform: scale();
+            -webkit-transition: all 0.7s;
+            -moz-transition: all 0.7s;
+            -ms-transition: all 0.7s;
+            -o-transition: all 0.7s;
+        }
+
+
+    }
+}
